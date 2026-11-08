@@ -8,7 +8,7 @@ const now = new Date().toISOString();
 const biz: BusinessProfile = { id: newId(), name: 'Biz', defaultCurrency: 'USD', defaultLanguage: 'en', createdAt: now, updatedAt: now };
 const cust: Customer = { id: newId(), type: 'individual', name: 'Dara', createdAt: now, updatedAt: now };
 const base = (id: string) => ({ id, number: '', businessSnapshot: biz, customerSnapshot: cust, customerId: cust.id, businessId: biz.id, issueDate: '2026-01-01', currency: 'USD' as const, taxMode: 'exclusive' as const, taxScope: 'none' as const, applyTaxAfterDiscount: true, templateId: 'modern' as const, createdAt: now, updatedAt: now });
-const item = (docId: string): DocItem => ({ id: newId(), documentId: docId, position: 0, description: 'x', quantityMilli: 1000, unitPriceMinor: 10000 });
+const item = (docId: string): DocItem => ({ id: newId(), documentId: docId, position: 0, description: 'x', unit: 'pcs', quantityMilli: 1000, unitPriceMinor: 10000 });
 const mkInv = (): [Invoice, DocItem[]] => { const id = newId(); return [{ ...base(id), dueDate: '2099-01-01', status: 'unpaid' }, [item(id)]]; };
 const mkQuo = (): [Quotation, DocItem[]] => { const id = newId(); return [{ ...base(id), validUntil: '2099-01-01', status: 'sent' }, [item(id)]]; };
 

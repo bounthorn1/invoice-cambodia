@@ -37,7 +37,7 @@ export default function DocEditor({ kind, existing, paidMinor = 0 }: Props) {
   const biz = f && (existing && f.businessId === existing.doc.businessId ? existing.doc.businessSnapshot : businesses?.find((b) => b.id === f.businessId));
   const cust = f && (existing && f.customerId === existing.doc.customerId ? existing.doc.customerSnapshot : customers?.find((c) => c.id === f.customerId));
   const status = existing?.doc.status ?? (kind === 'invoice' ? 'unpaid' : 'draft');
-  const built = useMemo(() => f ? formToDoc(kind, f, biz, cust, { id: meta.current.id, number: existing?.doc.number ?? '', createdAt: meta.current.createdAt, status, sourceQuotationId: existing && 'sourceQuotationId' in existing.doc ? existing.doc.sourceQuotationId : undefined, convertedInvoiceId: existing && 'convertedInvoiceId' in existing.doc ? existing.doc.convertedInvoiceId : undefined }) : null, [f, biz, cust, kind, existing, status]);
+  const built = useMemo(() => f ? formToDoc(kind, f, biz ?? undefined, cust ?? undefined, { id: meta.current.id, number: existing?.doc.number ?? '', createdAt: meta.current.createdAt, status, sourceQuotationId: existing && 'sourceQuotationId' in existing.doc ? existing.doc.sourceQuotationId : undefined, convertedInvoiceId: existing && 'convertedInvoiceId' in existing.doc ? existing.doc.convertedInvoiceId : undefined }) : null, [f, biz, cust, kind, existing, status]);
   if (!f || !built) return null;
 
   const set = (p: Partial<EForm>) => setF({ ...f, ...p });

@@ -198,7 +198,7 @@ export async function importBackup(b: BackupFile, mode: 'merge' | 'replace'): Pr
       await db.table(t).bulkPut(rows);
     }
     const local = await getSettings();
-    const inc = b.data.settings?.[0] as AppSettings | undefined;
+    const inc = b.data.settings?.[0] as unknown as AppSettings | undefined;
     if (inc) {
       const counters = { ...local.counters };
       for (const k of ['invoice', 'quotation', 'receipt'] as const) counters[k] = Math.max(counters[k] ?? 0, inc.counters?.[k] ?? 0) || undefined;
