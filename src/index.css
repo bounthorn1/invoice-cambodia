@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html[lang='km'] body { font-family: 'Kantumruy Pro', Inter, system-ui, sans-serif; }
+body { @apply bg-surface text-slate-800 antialiased; font-family: Inter, 'Kantumruy Pro', system-ui, sans-serif; }
+
+@media print {
+  @page { size: A4; margin: 10mm; }
+  html, body { background: #fff !important; }
+  #doc-sheet { min-height: auto !important; padding: 0 !important; }
+  thead { display: table-header-group; }
+  tr { break-inside: avoid; }
+}

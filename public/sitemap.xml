@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Replace https://invoice-cambodia.vercel.app with your real domain before deploying -->
+  <url><loc>https://invoice-cambodia.vercel.app/</loc></url>
+  <url><loc>https://invoice-cambodia.vercel.app/invoice-maker</loc></url>
+  <url><loc>https://invoice-cambodia.vercel.app/quotation-maker</loc></url>
+  <url><loc>https://invoice-cambodia.vercel.app/receipt-maker</loc></url>
+  <url><loc>https://invoice-cambodia.vercel.app/guides/how-to-create-invoice</loc></url>
+  <url><loc>https://invoice-cambodia.vercel.app/guides/how-to-create-quotation</loc></url>
+  <url><loc>https://invoice-cambodia.vercel.app/about</loc></url>
+  <url><loc>https://invoice-cambodia.vercel.app/contact</loc></url>
+  <url><loc>https://invoice-cambodia.vercel.app/privacy-policy</loc></url>
+  <url><loc>https://invoice-cambodia.vercel.app/terms</loc></url>
+</urlset>
